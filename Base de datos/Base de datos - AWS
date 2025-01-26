@@ -1,0 +1,190 @@
+
+
+---
+
+## **1. Amazon RDS (Relational Database Service)**
+- **Tipo**: Base de datos relacional totalmente administrada.
+- **Motores compatibles**:
+  - MySQL
+  - PostgreSQL
+  - MariaDB
+  - Oracle
+  - SQL Server
+  - Aurora (MySQL y PostgreSQL compatible)
+- **Casos de uso**:
+  - Aplicaciones web y móviles.
+  - Sistemas de gestión de contenido (CMS).
+  - Bases de datos transaccionales.
+- **Características**:
+  - Escalabilidad automática.
+  - Copias de seguridad automáticas y restauración.
+  - Alta disponibilidad con Multi-AZ.
+  - Replicación de lectura para mejorar el rendimiento.
+- **Ventajas**:
+  - Sin gestión de infraestructura.
+  - Compatible con aplicaciones existentes que usan motores SQL.
+- **Limitaciones**:
+  - No es ideal para cargas de trabajo NoSQL o de gran escala.
+
+---
+
+## **2. Amazon Aurora**
+- **Tipo**: Base de datos relacional de alto rendimiento.
+- **Motores compatibles**:
+  - MySQL compatible
+  - PostgreSQL compatible
+- **Casos de uso**:
+  - Aplicaciones que requieren alto rendimiento y escalabilidad.
+  - Sistemas empresariales críticos.
+- **Características**:
+  - Hasta 5 veces más rápido que MySQL y 3 veces más rápido que PostgreSQL.
+  - Escalabilidad automática.
+  - Alta disponibilidad con replicación en múltiples AZ.
+  - Almacenamiento autoajustable hasta 128 TB.
+- **Ventajas**:
+  - Alto rendimiento y disponibilidad.
+  - Compatible con MySQL y PostgreSQL.
+- **Limitaciones**:
+  - Costo más elevado en comparación con RDS estándar.
+
+---
+
+## **3. Amazon DynamoDB**
+- **Tipo**: Base de datos NoSQL clave-valor y documentos.
+- **Casos de uso**:
+  - Aplicaciones que requieren baja latencia y alta escalabilidad.
+  - Sistemas de juegos, carritos de compras, etc.
+- **Características**:
+  - Escalabilidad automática.
+  - Rendimiento de un solo dígito en milisegundos.
+  - Sin esquema fijo.
+  - Integración con AWS Lambda para aplicaciones sin servidor.
+- **Ventajas**:
+  - Ideal para aplicaciones que requieren alta escalabilidad y baja latencia.
+  - Sin gestión de infraestructura.
+- **Limitaciones**:
+  - No es adecuado para consultas complejas o transaccionales.
+
+---
+
+## **4. Amazon Redshift**
+- **Tipo**: Almacén de datos analítico.
+- **Casos de uso**:
+  - Análisis de grandes volúmenes de datos.
+  - Business Intelligence (BI).
+  - Machine Learning con datos masivos.
+- **Características**:
+  - Consultas SQL estándar.
+  - Escalabilidad automática.
+  - Integración con herramientas de visualización (QuickSight, Tableau, etc.).
+  - Soporte para datos estructurados y semi-estructurados.
+- **Ventajas**:
+  - Ideal para análisis en tiempo real.
+  - Sin gestión de infraestructura.
+- **Limitaciones**:
+  - No es una base de datos transaccional.
+  - Costos pueden aumentar con consultas complejas.
+
+---
+
+## **5. Amazon DocumentDB**
+- **Tipo**: Base de datos NoSQL orientada a documentos (compatible con MongoDB).
+- **Casos de uso**:
+  - Aplicaciones que requieren almacenamiento de documentos JSON.
+  - Sistemas de gestión de contenido, catálogos, etc.
+- **Características**:
+  - Compatible con MongoDB.
+  - Escalabilidad automática.
+  - Alta disponibilidad con replicación.
+  - Consultas flexibles y indexación automática.
+- **Ventajas**:
+  - Ideal para aplicaciones que usan MongoDB.
+  - Sin gestión de infraestructura.
+- **Limitaciones**:
+  - No es adecuado para consultas complejas o transaccionales.
+
+---
+
+## **6. Amazon Neptune**
+- **Tipo**: Base de datos de grafos.
+- **Casos de uso**:
+  - Aplicaciones que requieren modelado de relaciones complejas.
+  - Sistemas de recomendación, redes sociales, etc.
+- **Características**:
+  - Soporte para TinkerPop Gremlin y SPARQL.
+  - Escalabilidad automática.
+  - Alta disponibilidad con replicación.
+- **Ventajas**:
+  - Ideal para aplicaciones que requieren análisis de grafos.
+  - Sin gestión de infraestructura.
+- **Limitaciones**:
+  - No es adecuado para cargas de trabajo relacionales o NoSQL estándar.
+
+---
+
+## **7. Amazon ElastiCache**
+- **Tipo**: Servicio de caché en memoria.
+- **Motores compatibles**:
+  - Redis
+  - Memcached
+- **Casos de uso**:
+  - Almacenamiento en caché para aplicaciones web.
+  - Sesiones de usuario.
+  - Mejora del rendimiento de consultas frecuentes.
+- **Características**:
+  - Alta disponibilidad y replicación.
+  - Escalabilidad automática.
+  - Integración con otros servicios de AWS.
+- **Ventajas**:
+  - Baja latencia para aplicaciones sensibles al tiempo.
+  - Sin gestión de infraestructura.
+- **Limitaciones**:
+  - No es un almacenamiento persistente.
+
+---
+
+## **8. Amazon Keyspaces (for Apache Cassandra)**
+- **Tipo**: Base de datos NoSQL wide-column.
+- **Casos de uso**:
+  - Aplicaciones que requieren alta escalabilidad y disponibilidad.
+  - Sistemas de inventario, IoT, etc.
+- **Características**:
+  - Compatible con Apache Cassandra.
+  - Escalabilidad automática.
+  - Alta disponibilidad con replicación.
+- **Ventajas**:
+  - Ideal para aplicaciones que usan Cassandra.
+  - Sin gestión de infraestructura.
+- **Limitaciones**:
+  - No es adecuado para consultas complejas o transaccionales.
+
+---
+
+## **Comparativa Rápida**
+
+| **Servicio**       | **Tipo**         | **Escalabilidad** | **Consistencia** | **Casos de Uso**                  |
+|---------------------|------------------|-------------------|------------------|-----------------------------------|
+| **RDS**            | Relacional       | Vertical          | Fuerte           | Apps web, CMS, transacciones      |
+| **Aurora**         | Relacional       | Horizontal        | Fuerte           | Apps críticas, alto rendimiento   |
+| **DynamoDB**       | NoSQL (Clave-Valor)| Horizontal        | Eventual/Fuerte  | Apps escalables, baja latencia    |
+| **Redshift**       | Analítico        | Horizontal        | Eventual         | BI, análisis masivo               |
+| **DocumentDB**     | NoSQL (Documentos)| Horizontal        | Eventual         | Apps con MongoDB                  |
+| **Neptune**        | Grafos           | Horizontal        | Eventual         | Análisis de grafos                |
+| **ElastiCache**    | Caché en memoria | Horizontal        | Depende          | Caché, sesiones                   |
+| **Keyspaces**      | NoSQL (Wide-column)| Horizontal        | Eventual         | Apps con Cassandra                |
+
+---
+
+## **Consejos de Elección**
+1. **Relacional y pequeña escala**: RDS.
+2. **Relacional y alto rendimiento**: Aurora.
+3. **NoSQL y escalabilidad**: DynamoDB.
+4. **Análisis de datos**: Redshift.
+5. **Documentos JSON**: DocumentDB.
+6. **Grafos**: Neptune.
+7. **Caché en memoria**: ElastiCache.
+8. **Wide-column**: Keyspaces.
+
+---
+
+Este cheatsheet te ayudará a elegir la base de datos adecuada en función de tus necesidades en AWS. ¡Espero que sea útil! 🚀
